@@ -108,18 +108,35 @@
       font-weight: 600;
     }
 
-    .portrait {
-      width: 176px;
-      height: 176px;
-      border-radius: 50%;
+    .portrait-wrap {
+      width: 190px;
+      height: 240px;
+      position: relative;
+    }
+
+    .portrait-photo,
+    .portrait-fallback {
+      width: 100%;
+      height: 100%;
+      border-radius: 18px;
+      border: 8px solid white;
+      box-shadow: 0 18px 50px rgba(23, 35, 52, 0.13);
+    }
+
+    .portrait-photo {
+      display: block;
+      object-fit: cover;
+      object-position: center top;
+      background: white;
+    }
+
+    .portrait-fallback {
+      display: none;
+      place-items: center;
       background: var(--ink);
       color: white;
-      display: grid;
-      place-items: center;
       font-family: Georgia, "Times New Roman", serif;
       font-size: 3.1rem;
-      box-shadow: 0 18px 50px rgba(23, 35, 52, 0.13);
-      border: 8px solid white;
     }
 
     section {
@@ -136,7 +153,7 @@
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
     }
 
@@ -191,26 +208,20 @@
       font-size: 0.9rem;
     }
 
-    .notice {
-      border-left: 4px solid var(--accent);
-      background: #fff8f5;
-      padding: 14px 16px;
-      margin-top: 24px;
-      color: #5a332f;
-      font-size: 0.94rem;
-    }
-
     @media (max-width: 720px) {
       .navlinks { display: none; }
       .hero {
         grid-template-columns: 1fr;
         padding-top: 58px;
       }
-      .portrait {
-        width: 128px;
-        height: 128px;
-        font-size: 2.3rem;
+      .portrait-wrap {
+        width: 150px;
+        height: 190px;
         order: -1;
+      }
+
+      .portrait-fallback {
+        font-size: 2.3rem;
       }
       .grid { grid-template-columns: 1fr; }
       .education { grid-template-columns: 1fr; gap: 4px; }
@@ -245,12 +256,16 @@
           <a href="mailto:ytxue@sjtu.edu.cn">ytxue@sjtu.edu.cn</a>
           <span>Shanghai, China</span>
         </div>
-        <div class="notice">
-          Before publishing, replace <strong>ytxue@sjtu.edu.cn</strong> with the
-          email address you want to display publicly.
-        </div>
       </div>
-      <div class="portrait" aria-label="Initials YX">YX</div>
+      <div class="portrait-wrap">
+        <img
+          class="portrait-photo"
+          src="profile.jpg"
+          alt="Portrait of Yutong Xue"
+          onerror="this.style.display='none'; document.getElementById('portrait-fallback').style.display='grid';"
+        />
+        <div id="portrait-fallback" class="portrait-fallback" aria-label="Initials YX">YX</div>
+      </div>
     </div>
 
     <section id="about">
@@ -283,6 +298,15 @@
             and CRISPR-based approaches.
           </p>
         </article>
+
+        <article class="card">
+          <h3>AI-assisted Bowel Sound Detection</h3>
+          <p>
+            Developing methods for automated identification and analysis of bowel
+            sounds from physiological audio recordings as part of a research project
+            currently being prepared for submission.
+          </p>
+        </article>
       </div>
     </section>
 
@@ -295,6 +319,7 @@
         <span class="tag">Virology</span>
         <span class="tag">Human Genetics</span>
         <span class="tag">Bioinformatics</span>
+        <span class="tag">Bowel Sound Detection</span>
       </div>
     </section>
 
