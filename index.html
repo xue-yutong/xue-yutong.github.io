@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Academic homepage of Yutong Xue, medical student at Shanghai Jiao Tong University School of Medicine." />
+  <title>Yutong Xue | Academic Homepage</title>
+  <style>
+    :root {
+      --ink: #172334;
+      --muted: #5f6b78;
+      --accent: #8f2d26;
+      --line: #e8e3dc;
+      --paper: #fbfaf7;
+      --card: #ffffff;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.65;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover { text-decoration: underline; }
+
+    .wrap {
+      width: min(980px, calc(100% - 36px));
+      margin: 0 auto;
+    }
+
+    header {
+      border-bottom: 1px solid var(--line);
+      background: rgba(251, 250, 247, 0.95);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(8px);
+    }
+
+    nav {
+      min-height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      font-weight: 750;
+      letter-spacing: 0.01em;
+      color: var(--ink);
+    }
+
+    .navlinks {
+      display: flex;
+      gap: 22px;
+      font-size: 0.95rem;
+    }
+
+    .hero {
+      padding: 82px 0 66px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 42px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(3rem, 7vw, 5.4rem);
+      line-height: 1;
+      margin: 0 0 22px;
+      font-weight: 500;
+      letter-spacing: -0.035em;
+    }
+
+    .lead {
+      max-width: 690px;
+      font-size: 1.15rem;
+      color: var(--muted);
+      margin: 0 0 26px;
+    }
+
+    .contact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 22px;
+      font-weight: 600;
+    }
+
+    .portrait {
+      width: 176px;
+      height: 176px;
+      border-radius: 50%;
+      background: var(--ink);
+      color: white;
+      display: grid;
+      place-items: center;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 3.1rem;
+      box-shadow: 0 18px 50px rgba(23, 35, 52, 0.13);
+      border: 8px solid white;
+    }
+
+    section {
+      padding: 62px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 2rem;
+      font-weight: 500;
+      margin: 0 0 26px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 26px;
+      box-shadow: 0 10px 30px rgba(23, 35, 52, 0.04);
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 1.08rem;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tag {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 8px 13px;
+      font-size: 0.93rem;
+    }
+
+    .education {
+      display: grid;
+      grid-template-columns: 170px 1fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .education .years {
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 30px 0 48px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .notice {
+      border-left: 4px solid var(--accent);
+      background: #fff8f5;
+      padding: 14px 16px;
+      margin-top: 24px;
+      color: #5a332f;
+      font-size: 0.94rem;
+    }
+
+    @media (max-width: 720px) {
+      .navlinks { display: none; }
+      .hero {
+        grid-template-columns: 1fr;
+        padding-top: 58px;
+      }
+      .portrait {
+        width: 128px;
+        height: 128px;
+        font-size: 2.3rem;
+        order: -1;
+      }
+      .grid { grid-template-columns: 1fr; }
+      .education { grid-template-columns: 1fr; gap: 4px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="wrap" aria-label="Primary navigation">
+      <a class="brand" href="#top">Yutong Xue</a>
+      <div class="navlinks">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top" class="wrap">
+    <div class="hero">
+      <div>
+        <div class="eyebrow">Academic Homepage</div>
+        <h1>Yutong Xue</h1>
+        <p class="lead">
+          Medical student in the Eight-Year MD Program at Shanghai Jiao Tong University
+          School of Medicine, with research interests spanning medical artificial
+          intelligence, transplantation, virology, human genetics, and bioinformatics.
+        </p>
+        <div class="contact" id="contact">
+          <!-- IMPORTANT: Replace the placeholder email below before publishing. -->
+          <a href="mailto:ytxue@sjtu.edu.cn">ytxue@sjtu.edu.cn</a>
+          <span>Shanghai, China</span>
+        </div>
+        <div class="notice">
+          Before publishing, replace <strong>ytxue@sjtu.edu.cn</strong> with the
+          email address you want to display publicly.
+        </div>
+      </div>
+      <div class="portrait" aria-label="Initials YX">YX</div>
+    </div>
+
+    <section id="about">
+      <h2>About</h2>
+      <p>
+        I am a medical student interested in applying quantitative and computational
+        methods to clinically meaningful questions. My current work includes early
+        outcome prediction after kidney transplantation and the study of host factors
+        involved in human adenovirus infection.
+      </p>
+    </section>
+
+    <section id="research">
+      <h2>Current Research</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Kidney Transplantation and Early Outcome Prediction</h3>
+          <p>
+            Studying whether early post-transplant creatinine measurements can predict
+            medium- and long-term graft function, with an emphasis on transparent model
+            evaluation and clinically interpretable results.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Host Factors in Human Adenovirus Infection</h3>
+          <p>
+            Investigating host genes that influence viral replication through
+            computational screening and experimental validation, including knockdown
+            and CRISPR-based approaches.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Research Interests</h2>
+      <div class="tags" aria-label="Research interests">
+        <span class="tag">Medical Artificial Intelligence</span>
+        <span class="tag">Kidney Transplantation</span>
+        <span class="tag">Clinical Prediction</span>
+        <span class="tag">Virology</span>
+        <span class="tag">Human Genetics</span>
+        <span class="tag">Bioinformatics</span>
+      </div>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <div class="education">
+        <div class="years">Current</div>
+        <div>
+          <strong>Shanghai Jiao Tong University School of Medicine</strong><br />
+          Eight-Year MD Program
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      © <span id="year"></span> Yutong Xue. Built for GitHub Pages.
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
