@@ -1,23 +1,27 @@
-# Yutong Xue — GitHub Pages homepage
+# Updated GitHub Pages homepage
 
-This package contains a ready-to-publish single-page academic website.
+Upload these files to the root of `xue-yutong.github.io`:
 
-## Before uploading
+- `index.html` — replace the existing file
+- `profile.jpg` — your real portrait photo
 
-Open `index.html` in a text editor and replace both occurrences of:
+## Photo requirements
 
-`YOUR_EMAIL@sjtu.edu.cn`
+Rename your photo exactly:
 
-with the email address you want to display publicly.
+`profile.jpg`
 
-## Publish on GitHub Pages
+Keep the extension lowercase and upload it to the same directory as `index.html`.
 
-1. Create a GitHub account and verify your email.
-2. Create a public repository named exactly `YOUR_USERNAME.github.io`.
-3. Upload `index.html` to the repository.
-4. Open **Settings → Pages**.
-5. Select **Deploy from a branch**.
-6. Select the `main` branch and `/ (root)`, then save.
-7. Visit `https://YOUR_USERNAME.github.io`.
+The page automatically crops the photo to a vertical portrait frame. A photo with a
+roughly 4:5 aspect ratio works best.
 
-Do not share your GitHub password or verification code with anyone.
+## GitHub website steps
+
+1. Open the repository.
+2. Use **Add file → Upload files** to upload `profile.jpg`.
+3. Open the existing `index.html`.
+4. Click the pencil icon, replace all content with the updated file, or upload the new
+   `index.html` and confirm replacement.
+5. Commit the changes to `main`.
+6. Wait a few minutes and refresh `https://xue-yutong.github.io/`.
